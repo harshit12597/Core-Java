@@ -1,0 +1,414 @@
+51.	Create a program that helps banks to maintain records. It should have following facilities. o Anybody can create current or saving account with following initial information: account number, name, balance, and branch. o display account detail for a particular accounts. o display total money deposited in bank. o allow deposit and  withdrawal in an account  . o for saving account opening balance and minimum balance must be 5000. o for current account opening balance and minimum balance must be 1000. o can not withdraw the amount from the account that makes balance less than the minimum balance. 
+------>
+package Day7;
+
+import java.util.Scanner;
+
+public class BankAccount {
+
+	int accNo;
+	String name;
+	double balance;
+	String branch;
+	
+	public BankAccount(int accNo, String name, double balance, String branch) {
+		super();
+		this.accNo = accNo;
+		this.name = name;
+		this.balance = balance;
+		this.branch = branch;
+	}
+	void deposit(double amt)
+	{
+		balance+=amt;
+		System.out.println("Depositet Successfully");
+	}
+	void withdraw(double amt)
+	{
+		Scanner sc=new Scanner(System.in);
+		if(balance!=0)
+		{
+			balance=balance-amt;
+		}
+		else
+		{
+			System.out.println("Insufficient Balance!..");
+		}
+	}
+	void showBalance()
+	{
+		System.out.println("Balance ="+balance);
+	}
+	
+	@Override
+	public String toString() {
+		return "BankAccount [accNo=" + accNo + ", name=" + name + ", balance=" + balance + ", branch=" + branch + "]";
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter ur choice create Account :\n1)Saving Account\n2)Current Account");
+		int ch=sc.nextInt();
+		switch(ch)
+		{
+		case 1:
+			System.out.println("Create Saving Account Enter Details :");
+			System.out.println("Enter account no:");
+			int accno=sc.nextInt();
+			System.out.println("Enter Name :");
+			String name=sc.next();
+			System.out.println("Enter Balance more than 5000 :");
+			double amt=sc.nextDouble();
+			System.out.println("Enter Branch :");
+			String branch=sc.next();
+			if(amt>=5000)
+			{
+				BankAccount b1=new BankAccount(accno,name,amt,branch);
+				
+				System.out.println("Enter choice to Perform\n1)deposit\n2)withdraw\n3)show Balance\n4)show Data");
+				int ch1=sc.nextInt();
+				switch(ch1)
+				{
+				case 1:
+					System.out.println("Enter Amount to deposit :");
+					int dep=sc.nextInt();
+					b1.deposit(dep);
+					break;
+				case 2:
+					System.out.println("Enter amt to withdraw :");
+					int withdraw=sc.nextInt();
+					b1.withdraw(withdraw);
+					break;
+				case 3:
+					b1.showBalance();
+					break;
+				case 4:
+					System.out.println(b1);
+					break;
+					
+				default :
+					System.out.println("Invalid Input..");
+					break;
+					
+				}
+				
+			}
+			else {
+				System.out.println("Minimum 5000 balance required for Account Opening");
+			}
+			
+			
+			
+			
+			break;
+			
+		case 2:
+			System.out.println("Create Current Account Enter Details :");
+			System.out.println("Enter account no:");
+			int accno1=sc.nextInt();
+			System.out.println("Enter Name :");
+			String name1=sc.next();
+			System.out.println("Enter Balance more than 5000 :");
+			double amt1=sc.nextDouble();
+			System.out.println("Enter Branch :");
+			String branch1=sc.next();
+			if(amt1>=1000)
+			{
+				BankAccount b2=new BankAccount(accno1,name1,amt1,branch1);
+				
+				System.out.println("Enter choice to Perform\n1)deposit\n2)withdraw\n3)show Balance\n4)show Data");
+				int ch1=sc.nextInt();
+				switch(ch1)
+				{
+				case 1:
+					System.out.println("Enter Amount to deposit :");
+					int dep=sc.nextInt();
+					b2.deposit(dep);
+					break;
+				case 2:
+					System.out.println("Enter amt to withdraw :");
+					int withdraw=sc.nextInt();
+					b2.withdraw(withdraw);
+					break;
+				case 3:
+					b2.showBalance();
+					break;
+				case 4:
+					System.out.println(b2);
+					break;
+					
+				default :
+					System.out.println("Invalid Input..");
+					break;
+				}
+			}
+			else {
+				System.out.println("Minimum 1000 balance required for Account Opening");
+			}
+			break;
+		
+		default :
+			System.out.println("Invalid Data");
+			break;
+			
+		}
+		
+	}
+
+}
+
+===============================================================================================================
+52.	Input name of a person and count how many vowels it contains.  Use String class functions. 
+------->
+package Day8;
+
+import java.util.Scanner;
+
+public class VowelsCount {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Persons Name :");
+		String name = sc.next();
+		name=name.toLowerCase();
+		int vCnt=0;
+		for(int i=0;i<name.length();i++)
+		{
+			if(name.charAt(i)=='a' || name.charAt(i)=='e' || name.charAt(i)=='i' || name.charAt(i)=='o' || name.charAt(i)=='u')
+			{
+				vCnt++;
+			
+			}
+		}
+		System.out.println("Nomber of Vowels in String :-"+vCnt);
+	}
+
+}
+
+===============================================================================================================
+53.	Input data exactly in the following format, and print sum of all integer values. “67, 89, 23, 67, 12,
+ 55, 66”.   (Hint use String class split method and Integer class parseInt method) .
+----->
+package Day8;
+import java.util.*;
+public class SplitParseIntDemo {
+
+	public static void main(String[] args) {
+		String str= "67,89,23,67,12,55,66";
+		String strarr[] = str.split(",");
+		int sum=0;
+		for(String a: strarr)
+		{
+			int n=Integer.parseInt(a);
+			sum+=n;
+		}
+		System.out.println("Sum : "+sum);
+
+	}
+
+}
+===============================================================================================================
+54.	Write a program to reverse the given String.
+------>
+package Day8;
+
+import java.util.Scanner;
+
+public class StringReverse {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter String :");
+		String str=sc.next();
+		String str1="";
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			str1 += str.charAt(i);
+		}
+		System.out.println("Reverse String :"+str1);
+		
+	}
+
+}
+===============================================================================================================
+55.	Write a program to count no of words in the String.
+----->
+package Day8;
+
+import java.util.Scanner;
+
+public class wordCount {
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String :");
+		String str = sc.next();
+		int wCnt=0;
+		for(int i=0;i<str.length();i++)
+		{
+			wCnt++;
+		}
+		System.out.println("Nomber of Words in String :-"+wCnt);
+	}
+
+}
+===============================================================================================================
+56.	Write a program to convert very first character of every word in uppercase in a String.
+-------->
+package Day8;
+
+import java.util.Scanner;
+
+public class FirstCapitalLatter {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter String :");
+		String str=sc.next();
+		String outputString=str.substring(0, 1).toUpperCase() + str.substring(1);
+		System.out.println("Output String :"+outputString);
+	}
+
+}
+===============================================================================================================
+57.	Write a program to reverse every word of the String.
+----->
+package Day8;
+
+import java.util.Scanner;
+
+public class StringReverseByEachWord {
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter String :");
+		String str=sc.next();
+		String str1="";
+		for(int i=str.length()-1;i>=0;i--)
+		{
+			str1 += str.charAt(i);
+		}
+		System.out.println("Reverse String :"+str1);
+		
+	}
+
+}
+===============================================================================================================
+58.	Store name of weekdays in an array (starting from “Sunday” at 0 index). Ask day position from user and print day name. Handle array index out of bound exception and give proper message if user enter day index outside range (0-6). 
+-------->
+package Day9;
+
+import java.util.Scanner;
+
+public class ArrayIndexException {
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		String str = "Sunday,Monday,Tuesday,Wednesday,Thurseday,Friday,Satarday";
+		String strarr[]=str.split(",");
+		System.out.println("Enter Day :");
+		int day =sc.nextInt();
+		if(day<=6)
+		{
+			for(int i=0;i<strarr.length;i++)
+			{
+				if(i==day)
+					System.out.println("Day : "+strarr[i]);
+			}
+		}
+		else {
+			throw new ArrayIndexOutOfBoundsException();
+		}
+		
+	}
+
+}
+===============================================================================================================
+59.	Create a class Voter(voterId, name, age) with parameterized constructor.  The parameterized constructor should throw a checked exception if age is less than 18. The message of exception is “invalid age for voter ”
+------>
+package Day9;
+
+import java.io.IOException;
+
+class Voter{
+	int voterId;
+	String name;
+	int age;
+	public Voter(int voterId, String name, int age) {
+		super();
+		this.voterId = voterId;
+		this.name = name;
+		this.age = age;
+		try {
+			if(age >18)
+			{
+				System.out.println("ok");
+			}
+			else {
+				throw new IOException();
+			}
+		}
+		catch(IOException e) {
+			System.out.println("invalid age for voter ");
+		}
+	}
+	
+}
+public class CheckedExceptionDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+			Voter v=new Voter(1,"ght",17);
+	}
+
+}
+=============================================================================================================== 
+60.	Create Interface StudentFee and declare following method.  getFee() throws InvalidFeeException. This method ask fees from user and throws exception if user enters invalid or negative fees Create class Student with members (name, fees) and implement the StudentFee Interface
+----->
+package Day9;
+
+import java.util.Scanner;
+
+interface StudentFee{
+	void getFee();
+}
+class InvalidFeeException extends Exception{
+	
+}
+class Student implements StudentFee{
+
+	@Override
+	public void getFee() {
+		// TODO Auto-generated method stub
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter fee :");
+		double fee=sc.nextDouble();
+		try {
+			if(fee < 5000)
+			{
+			throw new InvalidFeeException();
+			}else {
+				System.out.println("Fee : "+fee);
+			}
+		}catch(InvalidFeeException e) {
+			System.out.println(e);
+		}
+	}
+	
+}
+public class UserDefineException {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Student s=new Student();
+		s.getFee();
+	}
+
+}
+
+

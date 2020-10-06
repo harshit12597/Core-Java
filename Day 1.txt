@@ -1,0 +1,249 @@
+01.	Write a program to print Hello World. Compile and run it using command prompt.
+
+------->
+
+
+class hello{
+       
+      public static void main(String args[])
+      {
+
+            System.out.println("welcome cdac java");
+ 
+      }
+
+}
+
+
+===============================================================================================================
+
+02  Write a program to declare a variable named rollNo of integer type. Assign it a value (let say 100) to it and print the following statement roll no = 100 .
+
+------>
+
+           
+class variable{
+   
+ public static void main(String [] args)
+  {
+           int rollNo=100;
+        System.out.println("roll no ="+rollNo);
+
+  }
+
+
+}
+===============================================================================================================
+03.	Find the result of following expressions. You need to determine the primitive data type of the variable by looking carefully the given expression and initialize variables by any random value.
+A. y = x2 + 3x - 7 (print value of y) 
+B. y = x++ + ++x (print value of x and y) 
+C. z = x++ - --y - --x  +  x++ (print value of x ,y and z)
+D. z = x && y || !(x || y)  (print value of z) [ x, y, z are boolean variables ]
+-------->
+class Expression
+{
+	public static void main(String args[])
+	{
+		int x=4;
+		int y=(x^2)+(x*3)-7;
+		System.out.println("Y = "+y);
+		
+		y=x++ + ++x;
+		System.out.println("X = "+x+"Y = "+y);
+		
+		int z =x++ - --y - --x + x++;
+		System.out.println("X = "+x+"Y = "+y+" Z = "+z);
+		
+		boolean X = true;
+		boolean Y = true;
+		
+		boolean Z = X && Y || !(X || Y);
+		System.out.println(" Z = "+Z);
+		
+	}
+}
+
+
+===============================================================================================================
+04.	Write a program that initializes 2 byte type of variables. Add the values of these variables and store in a byte type of variable. [Note: primitive down casting is required in this program ] .
+------>
+
+class byte1{
+
+  public static void main(String args[])
+   {
+           byte a=10;
+           byte b=20;
+
+           int c;
+           c=a+b;
+           byte c1=(byte)c;
+           System.out.println(c1);
+ }
+
+
+}
+
+
+===============================================================================================================/*05.Write a program that takes user’s name as command line argument and prints Welcome <entered user name>.*/
+
+
+class shucmd{
+         public static void main(String args[]){
+             
+                    String s1=args[0];
+                   System.out.println("welcome  "+s1);
+
+                  
+
+    }
+ 
+
+}
+
+===============================================================================================================
+
+ /*06.	Write a program that takes radius of a circle as input. Read the entered radius using Scanner class. Then calculate and print the area and circumference of the circle.*/
+
+
+import java.util.Scanner;
+class circle{
+
+       public static void main(String args[])
+       {
+             System.out.println("Enter the radius of the circle");
+             Scanner sc=new Scanner(System.in);
+             double pie = 3.14;
+             double radius = sc.nextDouble();
+
+             //Area = PI*radius*radius
+            double area = pie*(radius * radius);
+            System.out.println("The area of circle is: " + area);
+
+          //Circumference = 2*Pie*radius
+          double circumference= 2*pie*radius;
+          System.out.println( "The circumference of the circle is:"+circumference) ;
+
+
+       }
+
+}
+===============================================================================================================
+/*07.	Write a program to calculate sum of 5 subject’s marks & find percentage. Take the obtained marks from user using Scanner class. Output should be in this format [ percentage marks = 99 % ]. Use concatenation operator here.*/
+
+
+import java.util.Scanner;
+
+class percentage{
+               
+       public static void main(String args[])
+       {
+             System.out.println("ENTER THE 5 SUBJECT MARKS");
+             Scanner sc=new Scanner(System.in);
+             int subj1=sc.nextInt();
+             int subj2=sc.nextInt();
+             int subj3=sc.nextInt();
+             int subj4=sc.nextInt();
+             int subj5=sc.nextInt();
+             double total;
+             double Average; 
+             double Percentage;
+           
+            total = subj1 + subj2 + subj3 + subj4+ subj5;
+            Average = total / 5;
+	    Percentage = (total / 500) * 100;
+	    
+	    System.out.println(" Total Marks =  " + total);
+	    System.out.println(" Average Marks =  " + Average);
+	    System.out.println(" Marks Percentage =  " + Percentage);
+            
+                 
+
+       }
+
+
+
+}
+
+
+===============================================================================================================
+
+/*08.	Write a program to find the simple interest. Take the principle amount, rate of interest and time from user using Scanner class.*/
+
+
+import java.util.Scanner;
+
+class simpleinte{
+
+        public static void main(String args[])
+        {
+                Scanner sc=new Scanner(System.in);
+                
+                 System.out.println("ENTER THE PRINCIPLE AMOUNT");
+                 double principal_amount=sc.nextDouble();
+
+                 
+                 System.out.println("ENTER THE RATE OF INTREST ");
+                 double  roi=sc.nextDouble();
+                   
+                 System.out.println("ENTER THE TIME");
+                 double  time=sc.nextDouble();
+      
+                 double simpleInterset;
+                 simpleInterset = (principal_amount * roi * time) / 100;
+		
+		System.out.println("\n The Simple Interest for Principal Amount " + principal_amount + " is = " + simpleInterset);
+
+        }
+
+}
+
+===============================================================================================================
+/*09.	Write a program to read the days (eg. 670 days) as integer value using Scanner class. Now convert the entered days into complete years, months and days and print them.*/
+
+
+import java.util.Scanner;
+class que9
+{
+    public static void main(String args[])
+    {
+        int m, year, week, day;
+
+        Scanner s = new Scanner(System.in);
+        System.out.print("Enter the number of days:");
+        m = s.nextInt();
+
+        year = m / 365;
+        m = m % 365;
+        System.out.println("No. of years:"+year);
+
+        week = m / 7;
+        m = m % 7;
+        System.out.println("No. of weeks:"+week);
+
+        day = m;
+        System.out.println("No. of days:"+day);
+    }
+}
+
+
+===============================================================================================================
+
+/*10.	Write a program to convert temperature from Fahrenheit to Celsius. Take Fahrenheit as input using Scanner class. [ formula : C= 5*(f-32)/9 ]*/
+
+
+
+import java.util.*;
+class que10{
+  public static void main(String[] args) {
+    float temperature;
+    Scanner in = new Scanner(System.in);
+
+    System.out.println("Enter temperature in Fahrenheit");
+    temperature = in.nextInt();
+
+    temperature = ((temperature - 32)*5)/9;
+
+    System.out.println("temperature in Celsius = " + temperature);
+  }
+}

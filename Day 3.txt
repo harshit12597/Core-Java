@@ -1,0 +1,311 @@
+/*21.	Program to show sum and average of 10 element array. Accept array elements from user. */
+
+import java.util.Scanner;
+class que21{
+
+      public static void main(String args[]){
+           
+                Scanner sc= new Scanner(System.in);
+          
+                 int arr[]=new int[5];
+                                    System.out.println("enter the element in the array");
+                          for(int i=0;i<arr.length;i++){
+                                  
+                                  arr[i]=sc.nextInt();      
+                            
+                               }       
+ 
+                              int sum=0;
+                             System.out.println("the element in the array");
+                          for(int i=0;i<arr.length;i++){
+                                
+                                     sum=sum+arr[i];
+                                 
+                                      
+                              }       
+ 
+                    System.out.println("sum = "+sum);
+                       int average=0;
+                       average=sum/arr.length;
+                      System.out.println("Average ="+average);
+       }
+
+}
+===============================================================================================================
+
+/*22.	Sort a ten element array in descending order.*/
+
+public class que22{    
+    public static void main(String[] args) {        
+        //Initialize array     
+        int [] arr = new int [] {5, 2, 8, 7, 1};     
+        int temp = 0;    
+            
+        //Displaying elements of original array    
+        System.out.println("Elements of original array: ");    
+        for (int i = 0; i < arr.length; i++) {     
+            System.out.print(arr[i] + " ");    
+        }    
+            
+        //Sort the array in descending order    
+        for (int i = 0; i < arr.length; i++) {     
+            for (int j = i+1; j < arr.length; j++) {     
+               if(arr[i] < arr[j]) {    
+                   temp = arr[i];    
+                   arr[i] = arr[j];    
+                   arr[j] = temp;    
+               }     
+            }     
+        }    
+            
+        System.out.println();    
+            
+        //Displaying elements of array after sorting    
+        System.out.println("Elements of array sorted in descending order: ");    
+        for (int i = 0; i < arr.length; i++) {     
+            System.out.print(arr[i] + " ");    
+        }    
+    }    
+}    
+
+
+===============================================================================================================
+/*23.	Write a program to reverse the array elements.*/
+import java.util.Scanner;
+class que23{
+
+      public static void main(String args[]){
+           
+                Scanner sc= new Scanner(System.in);
+          
+                 int arr[]=new int[5];
+                                    System.out.println("enter the element in the array");
+                          for(int i=0;i<arr.length;i++){
+                                  
+                                  arr[i]=sc.nextInt();      
+                            
+                               }       
+ 
+                     
+                             System.out.println("the reverse element in the array");
+                          for(int i=arr.length-1;i>=0;i--){
+                                  System.out.println( arr[i] );
+                                      
+                            
+                               }       
+ 
+
+       }
+
+}
+
+===============================================================================================================
+24.	Write a program to search an element in the array.
+------->
+import java.util.*;
+class SearchInArray
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Size of array :");
+		int n= sc.nextInt();
+		int arr[]= new int[n];
+		int flag=0;
+		System.out.println("Enter array Elements:");
+		for(int i=0;i<n;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		
+		System.out.println("Enter Number to search in array :");
+		int num= sc.nextInt();
+		for(int i=0;i<n;i++)
+		{
+			if(num==arr[i])
+			{
+				System.out.println(num+" is at "+i+" index");
+				flag=0;
+				break;
+			}
+			else
+			{
+				flag=1;
+				continue;
+			}
+		}
+		
+		if(flag==1)
+			System.out.println("Number is Not present in array");
+	}
+}
+
+==============================================================================================================
+25.	Write the program to find the sum of even elements and sum of odd elements present in the array of integer type.
+---->
+import java.util.*;
+class EvenOddSum
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter array size :-");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		int evenSum=0,oddSum=0;
+		for(int i=0;i<n;i++)
+		{
+			arr[i]=sc.nextInt();
+			if(arr[i]%2==0)
+			{
+				evenSum+=arr[i];
+			}
+			else
+			{
+				oddSum+=arr[i];
+			}
+		}
+		
+		System.out.println("Sum of Even elements :- "+evenSum);
+		System.out.println("Sum of Odd elements :- "+oddSum);
+	}
+}
+
+==============================================================================================================
+26.	Create an array of 17 elements in 5 rows.  And calculate sum of all elements.
+--->
+import java.util.*;
+class Array2dSum
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		int arr[][]=new int[5][];
+		int sum=0;
+		for(int i=0;i<5;i++)
+		{
+			System.out.println("Enter col size for row "+i);
+			int c=sc.nextInt();
+			for(int j=0;j<c;j++)
+			{
+				arr[i][j]=sc.nextInt();
+				sum+=arr[i][j];
+			}
+		}
+		System.out.println("Sum of all array Element ="+sum);
+	}
+}
+
+==============================================================================================================
+27.	Write a program to fine the smallest and greatest number present in the array of integer type.
+------>
+import java.util.*;
+class ArrayMaxMin
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size :-");
+		int n=sc.nextInt();
+		int arr[]=new int[n];
+		System.out.println("Enter array "+n+" elements :-");
+		for(int i=0;i<n;i++)
+		{
+			arr[i]=sc.nextInt();
+		}
+		int min=arr[0];
+		int max=arr[0];
+		for(int i=1;i<n;i++)
+		{
+			if(max < arr[i])
+			{
+				max=arr[i];
+			}
+			else if(min > arr[i])
+			{
+				min=arr[i];
+			}			
+		}
+		System.out.println("Max Element in Array :- "+max);
+		System.out.println("Min Element in Array :- "+min);
+	}
+}
+
+==============================================================================================================
+28.	Initialize one String type of array and print the elements using for each loop.
+---->
+import java.util.*;
+class StringArray
+{
+	public static void main(String args[])
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter Array Size :-");
+		int n=sc.nextInt();
+		String str[]=new String[n];
+		for(int i=0;i<n;i++)
+		{
+			str[i]=sc.next();
+		}
+		System.out.println("String Array Data :-");
+		for(String a : str)
+		{
+			System.out.println(a);
+		}
+	}
+}
+
+==============================================================================================================
+29.	Write a program to print the total number of one-D arrays in a two-D array and the number of elements in every one-D array present in the two-D arrays.
+---->
+import java.util.*;
+class ElementInArrayQ28
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter Size of rows and cols :-");
+		int r=sc.nextInt();
+		int c=sc.nextInt();
+		int arr[][]=new int[r][c];
+		int cntOneD = 0;
+		int cntTotalEle = 0;
+		for(int i=0;i<r;i++)
+		{
+			cntOneD++;
+			for(int j=0;j<c;j++)
+			{
+				arr[i][j]=sc.nextInt();
+				cntTotalEle++;	
+			}
+		}
+		System.out.println("No of 1-D Arrays :- "+cntOneD);
+		System.out.println("No of Element :- "+cntTotalEle);
+	}
+}
+
+==============================================================================================================
+30.	Create an integer type 2-D array of size [3X3]. Take the elements from the user and then calculate the sum of the elements present in the diagonal.
+----->
+import java.util.*;
+class MatrixDiagonalSum
+{
+	public static void main(String args[])
+	{
+		Scanner sc = new Scanner(System.in);
+		int arr[][]=new int[3][3];
+		int sum=0;
+		for(int i=0;i<arr.length;i++)
+		{
+			for(int j=0;j<arr[i].length;j++)
+			{
+				arr[i][j]=sc.nextInt();	
+				if(i==j)
+				{
+					sum+=arr[i][j];
+				}
+			}
+		}
+		System.out.println("Sum of All Diagonal Elements in Array Matrix :- "+sum);
+	}
+}
